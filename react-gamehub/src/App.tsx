@@ -1,19 +1,8 @@
-import ListGroup from "./components/ListGroup";
-
+import Alert from "./components/Alert";
 function App() {
-  let items = ["osswa", "osswa2", "osswa3", "osswa4"];
-
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  };
-
   return (
     <div>
-      <ListGroup
-        items={items}
-        heading="list of the most amazing creatures ever to exist"
-        onSelectItem={handleSelectItem}
-      />
+      <Alert>Hello World</Alert>
     </div>
   ); //make sure there is no space / and >
 }
