@@ -1,18 +1,14 @@
 import { useState } from "react";
 
-// we want to pass {items: [], heading: string}
 interface Props {
   items: string[];
-  heading: string; // type annotation
+  heading: string;
+  // we want a function for the loic taht takes (item: string)=>void
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
-  /* destructuring the props to avoid using the props.sth*/
-
-  //hook
+function ListGroup({ items, heading, onSelectItem }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-
-  //has states that change overtime
 
   return (
     <>
@@ -29,6 +25,7 @@ function ListGroup({ items, heading }: Props) {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}

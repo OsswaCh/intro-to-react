@@ -91,3 +91,9 @@ Remarques about the code:
 
 USING PROPS (properties): how can we make a component reusable (like passing arguments to a functio)
  -> use interface
+
+ PASSIGN FUNCTIONS VIA PROPS:
+ implementing the logic that gets done when you do an application
+ you shouldnt ad it to the list componenet since that will make it not reusable
+-> when an item is selected we should notify the App componenet that it happened
+->PROPS ARE READ ONLY if we wont to change sth we hsould use states
