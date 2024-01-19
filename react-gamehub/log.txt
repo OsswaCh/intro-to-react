@@ -1,0 +1,87 @@
+Here I write all the stuff i learnt + references
+
+we are following this tut: https://www.youtube.com/watch?v=SqcY0GlETPk
+
+This project uses Typescript.
+Difference between javascript and Typescript: 
+    TypeScript offers all of the features of JavaScript plus some additional perks. TypeScript intrinsically encourages
+    us to code cleanly, making the code more scalable. 
+PascalCasing: (used in this project) capitalises the firts letter of every word like written in the name
+                react expects us to follow it (espacially when creating a function).
+
+Key folders in created by node + vite: 
+    node_module(vite only): where all the third party libraries like react and others are installed, never touch it.
+    public: where public assests of the project exist, like images, videos..
+    src: where the work goes
+    index.html: has the root, the container for the application. 
+                <script type="module" src="/src/main.tsx"></script> is the entry point to the application 
+    tsconfig.json: tells the program how to be compiled to js
+
+
+Remarques about the code:
+    - File type of Typescript is either Ts (plain typsecript files) or tsx (when it has react components)
+    - there are 2 ways to create a react component: a js class or a function, but we use functions because they are easier to write.
+    - return <div><Message /></div> //make sure there is no space / and >
+    - JSX i transcribed into js and it makes creating dynamic content ez
+    - return <h1>Hello {}</h1>; between the bracket you can write any js expression
+        an expression is any code that returns a value
+    - you can use cntrl+d to select the reaccurances of a certain word :o
+    - return (
+    <ul className="list-group">
+      ...
+    </ul>
+     );  -> the () are necessary to break the items in different lines
+        -a component cannot return more than one element -> we cant add a hezder by adding another var 
+            ->to fix this we can : 
+                1- wrap both elements in a third element (<div> for instence) ->no good cauz we are creating an other element just for the sak eof react
+                2- add fragment instead of it
+                3- remove the import and add empty <> -> automatically assumens it's a fragment
+        -   return (
+                    <>
+                    <h1>List</h1>
+                    <ul className="list-group">
+                    {items.map(item => <li>{item}</li>)}      
+                    </ul>
+                    </>
+                );
+
+            {items.map(item => <li>{item}</li>)}      
+            this line is not aloowed in jsx format -> we render it dynamically ny adding curly brackets
+
+    - conditional showing: 
+    if (items.length === 0)
+    return (
+      <>
+        <h1>Heading</h1>
+        <p>There are no items!</p>
+      </>
+    );    
+
+     Inside th return:
+
+    <h1>List</h1>
+      {items.length == 0 ? <p>No items found</p> : null}
+      <ul className="list-group">
+
+      or
+
+      {items.length == 0 && <p>No items found</p>}
+
+      if it gets complicated we can store the logic in a variable like so:
+
+       const getMessage= () =>{
+    return items.length == 0 ? <p>No items found</p> : null;
+  }
+
+  return (
+    <>
+      <h1>List</h1>
+      {getMessage()}
+      <ul className="list-group"> 
+
+
+
+- <li key={item} onClick={handleClick}> not a fucntion call but a refenrece
+- highlighting the clicked  onClick={() => {
+              selectedIndex = index;
+            }
