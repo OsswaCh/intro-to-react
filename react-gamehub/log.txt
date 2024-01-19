@@ -85,3 +85,9 @@ Remarques about the code:
 - highlighting the clicked  onClick={() => {
               selectedIndex = index;
             }
+
+
+
+
+USING PROPS (properties): how can we make a component reusable (like passing arguments to a functio)
+ -> use interface

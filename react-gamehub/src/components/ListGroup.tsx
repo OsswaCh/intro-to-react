@@ -1,7 +1,13 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["osswa", "osswa2", "osswa3", "osswa4"];
+// we want to pass {items: [], heading: string}
+interface Props {
+  items: string[];
+  heading: string; // type annotation
+}
+
+function ListGroup({ items, heading }: Props) {
+  /* destructuring the props to avoid using the props.sth*/
 
   //hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -10,7 +16,7 @@ function ListGroup() {
 
   return (
     <>
-      <h1>List</h1>
+      <h1>heading</h1>
       {items.length === 0 && <p>No items found</p>}
       <ul className="list-group ">
         {items.map((item, index) => (
