@@ -108,3 +108,6 @@ change it in the app like this
       </Alert>
 
 and in the alert file add children as a, element of Props
+
+
+- optional property :   color?: string;
